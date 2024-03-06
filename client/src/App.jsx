@@ -15,6 +15,7 @@ import MyBlogs from './components/MyBlogs.jsx'
 import { Context } from './index.js'
 import axios from 'axios'
 import Footer from './components/Footer.jsx'
+import NotFound from './components/NotFound.jsx'
 
 const App = () => {
   const {setIsAuthenticated} = useContext(Context);
@@ -41,6 +42,7 @@ const App = () => {
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
         <Route path='/profile' element={<Profile />} />
+        <Route path='/*' element={<NotFound />} />
       </Routes>
       <Footer />
     </Router>
