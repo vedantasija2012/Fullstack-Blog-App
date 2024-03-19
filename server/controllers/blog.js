@@ -52,7 +52,7 @@ export const createBlog = async (req, res) => {
 
 export const showBlogs = async (req, res) => {
     try {
-        const blogs = await Blog.find();
+        const blogs = await Blog.find().populate('author');
 
         if (!blogs || blogs.length === 0) {
             return res.status(404).json({

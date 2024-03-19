@@ -26,7 +26,8 @@ const BlogCard = ({ image, title, description, blogID, isOwner, onDelete, userna
             <div className="blog border-2 px-6 py-4 my-3 rounded-sm shadow-2xl w-full transform transition-transform hover:scale-105 duration-500">
                 <Link to={`/blog/${title.replace(titleUrlRegex, "-")}/${blogID}`}>
                     <div className="info my-2">
-                        <p className="text-xs text-blue-500 mt-1"><strong><AiOutlineUser className='inline mr-1 font-bold text-2xl border-2 border-blue-500 rounded-full' /> {username}</strong></p>
+                        {/* convert 'username' to 'Username' */}
+                        <p className="text-xs text-blue-500 mt-1"><strong><AiOutlineUser className='inline mr-1 font-bold text-2xl border-2 border-blue-500 rounded-full' /> {username.charAt(0).toUpperCase() + username.slice(1)}</strong></p>
                         <p className="text-xs text-gray-600 mt-1"><strong>Date Created: {new Date(createdAt).toLocaleString()}</strong></p>
                     </div>
                     <img className='w-full h-[30vh] object-cover' src={image} alt="Image Not Loaded!" />

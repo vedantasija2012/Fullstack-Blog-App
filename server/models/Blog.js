@@ -1,6 +1,7 @@
-import mongoose, {Schema, model} from 'mongoose'
+import mongoose from 'mongoose'
+import User from './User.js';
 
-const blogSchema = new Schema({
+const blogSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true
@@ -12,12 +13,12 @@ const blogSchema = new Schema({
     image:{
         type: String,
         required: false,
-        // default: `https://cultureandtourism.danube-region.eu/wp-content/themes/dfd-nat1ve/assets/images/no_image_resized_675-450.jpg`
+        default: `https://cultureandtourism.danube-region.eu/wp-content/themes/dfd-nat1ve/assets/images/no_image_resized_675-450.jpg`
     },
     author:{
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: 'User'
+        ref: User
     },
     dateCreated:{
         type: Date,
@@ -25,6 +26,6 @@ const blogSchema = new Schema({
     }
 })
 
-const Blog = model('Blog', blogSchema);
+const Blog = mongoose.model('Blog', blogSchema);
 
 export default Blog;

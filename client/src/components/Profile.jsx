@@ -37,7 +37,7 @@ const Profile = () => {
         fetchUserData()
     }, [])
     return (
-        <div className='w-full md:w-4/5 shadow-xl block mx-auto my-4'>
+        <div className='w-full md:w-4/5 shadow-xl block mx-auto my-4 py-8 px-6'>
             {
                 loading ? <Loader /> : (
                     <div className='flex flex-col items-center justify-center'>

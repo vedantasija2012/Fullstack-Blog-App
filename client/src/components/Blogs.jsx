@@ -83,7 +83,7 @@ const Blogs = () => {
           blogs.map((item, index) => {
             return (
               <BlogCard key={index} image={item.image} title={item.title} description={item.description}
-                blogID={item._id} isOwner={userID === item.author} onDelete={() => handleDelete(item._id)} username={item.author || 'Miscelleneous'} createdAt={item.dateCreated} />
+                blogID={item._id} isOwner={userID === item.author} onDelete={() => handleDelete(item._id)} username={item.author?.name || 'Miscelleneous'} createdAt={item.dateCreated} />
             )
           })
         }
